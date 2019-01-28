@@ -1,0 +1,161 @@
+/*----------------------------------------
+------------ Глобальные стили ------------
+----------------------------------------*/
+
+/* Кастомные свойства */
+:root {
+  --theme-color-1: #fff;
+
+  --theme-color-2: #81b3d2;
+  --theme-color-2-2: #669ec0;
+  --theme-color-2-3: #5496bd;
+
+  --theme-color-3: #766357;
+  --theme-color-3-2: #604e43;
+  --theme-color-3-3: #503e33;
+
+  --bg-color: #f2f2f2;
+
+  --main-font-family: 'PT Sans', 'Arial', sans-serif;
+}
+
+/* Запретить картинкам
+выпадать за границы
+своего блока с
+сохранением пропорций */
+img {
+  max-width: 100%;
+  heigth: auto;
+}
+
+/* Доступно скрыть */
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* Адекватный расчет блоков */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html {
+  box-sizing: border-box;
+}
+
+/* Сброс браузерных умолчаний */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+
+  font-family: var(--main-font-family);
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  
+  background:
+    url(../img/button-shape.png) 50% 504px no-repeat scroll,
+    url(../img/text-because....png) 50% 410px no-repeat scroll,
+    url(../img/text-sedona.png) 50% 270px no-repeat scroll,
+    url(../img/text-to-the-gorgeous.png) 50% 190px no-repeat scroll,
+    url(../img/text-welcome.png) 50% 130px no-repeat scroll,
+    url(../img/bg-photo.jpg) 0 0 no-repeat scroll;
+
+  background-color: var(--theme-color-1);
+}
+
+
+/*-----------------------------------
+--------------- Шапка ---------------
+-----------------------------------*/
+
+.main-navigation > ul {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 505px;
+
+  list-style-type: none;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: space-around;
+
+  background-color: var(--theme-color-1);
+
+  /* outline: 1px dashed green; */
+}
+
+.main-navigation li {
+  text-align: center;
+  min-width: 150px;
+
+  /* outline: 1px dashed blue; */
+}
+
+/* Пространство для логотипа */
+.main-navigation li:nth-child(3) {
+  margin-right: 138px;
+}
+.main-navigation li:nth-child(4) {
+  margin-left: 138px;
+}
+
+/* Логотип в навигации */
+.main-navigation ul > li:nth-child(1) {
+  width: 138px;
+  height: 70px;
+
+  order: 3;
+  
+  position: absolute;
+  left: calc(50% - 69px);
+  top: -15px; */
+
+  /* outline: 2px dashed red; */
+}
+
+.main-navigation a {
+  text-decoration: none;
+  line-height: 26px;
+}
+.main-navigation li {
+  margin: 15px 0;
+}
+
+.slogan {
+  min-height: 212px;
+  background-color: var(--theme-color-1);
+
+  /* outline: 1px dashed pink; */
+}
+
+/*-----------------------------------
+-------- Основное содержание --------
+-----------------------------------*/
+
