@@ -80,6 +80,7 @@ a {
   margin: 0 auto;
 
   background-color: var(--theme-color-1);
+  box-shadow: 0 0 20px #bbb;
 }
 
 
@@ -100,15 +101,11 @@ a {
   justify-content: space-around;
 
   background-color: var(--theme-color-1);
-
-  /* outline: 1px dashed green; */
 }
 
 .main-navigation li {
   text-align: center;
   min-width: 150px;
-
-  /* outline: 1px dashed blue; */
 }
 
 /* Пространство для логотипа */
@@ -129,8 +126,6 @@ a {
   position: absolute;
   left: calc(50% - 69px);
   top: -15px; */
-
-  /* outline: 2px dashed red; */
 }
 
 .main-navigation a {
@@ -176,8 +171,6 @@ a {
   user-select: none;
   
   background-color: var(--theme-color-1);
-
-  outline: 1px dashed pink;
 }
 
 .initiate {
@@ -187,11 +180,14 @@ a {
   font-weight: normal;
   
   color: #333;
-  /* outline: 1px dashed pink; */
 }
 
 
 /*-------- Блок преимуществ --------*/
+
+.features-and-services {
+  margin-top: -9px;
+}
 
 .features {
   display: flex;
@@ -201,18 +197,30 @@ a {
   margin: 0;
 
   list-style: none;
-
-  outline: 1px dashed blue;
 }
 
 .features li {
-  height: 255px;
-  overflow: hidden;
-
-  outline: 1px dashed pink;
+  text-align: center;
 }
 
-.features > .major > div {
+.features li:not(.services) {
+  height: 255px;
+  overflow: hidden;
+}
+
+.features h3 {
+  font-size: 21px;
+}
+
+.features p:not(.info p) {
+  color: #333;
+}
+
+.features .number {
+  display: block;
+}
+
+.features > .major {
   background-color: var(--theme-color-2);
   color: var(--theme-color-1);
 
@@ -221,7 +229,11 @@ a {
   justify-content: space-between;
 }
 
-.features > .major-second > div {
+.features > .major > .info {
+  padding: 30px 45px;
+}
+
+.features > .major-second {
   flex-direction: row-reverse;
 }
 
@@ -232,11 +244,6 @@ a {
 
 .features .major .info {
   width: calc(100% / 3);
-  text-align: center;
-}
-
-.features > .major div {
-  outline: 1px dashed red;
 }
 
 .features > .minor-wrap > ul {
@@ -245,16 +252,32 @@ a {
 
   margin: 0;
   padding: 0;
+
   list-style: inherit;
 }
 
 .features .minor {
+  padding: 30px 60px;
   width: 400px;
-  padding: 50px;
-
-  text-align: center;
 
   background-color: #eee;
-  
-  outline: 1px dashed red;
+}
+
+.features .services ul {
+  display: flex;
+
+  padding: 0;
+  margin: 0;
+}
+
+.features > .services li {
+  padding: 65px;
+
+  width: calc(100% / 3);
+  height: 330px;
+}
+
+.features svg {
+  width: 76px;
+  height: 76px;
 }
