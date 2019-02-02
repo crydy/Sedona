@@ -83,7 +83,22 @@ a {
   box-shadow: 0 0 20px #bbb;
 }
 
+/*------------- Кнопки -------------*/
+.btn {
+  color: var(--theme-color-1);
+  background-color: var(--theme-color-2);
+  display: inline-block;
 
+  cursor: pointer;
+}
+
+.btn-2 {
+  color: var(--theme-color-1);
+  background-color: var(--theme-color-3);
+  display: inline-block;
+
+  cursor: pointer;
+}
 
 /*-----------------------------------
 --------------- Шапка ---------------
@@ -138,12 +153,12 @@ a {
 
 /* Отступ под основной фон на главной */
 .index .main-navigation > ul {
-  margin-bottom: 507px;
+  margin-bottom: 512px;
 }
 /* Основной фон */
 .index {
   background:
-    url(../img/button-shape.png) 50% 506px no-repeat scroll,
+    url(../img/button-shape.png) 50% 511px no-repeat scroll,
     url(../img/text-because....png) 50% 405px no-repeat scroll,
     url(../img/text-sedona.png) 50% 270px no-repeat scroll,
     url(../img/dashes.png) 50% 200px no-repeat scroll,
@@ -160,9 +175,12 @@ a {
 -------- Основное содержание --------
 -----------------------------------*/
 
+/*------------ Слоган ------------*/
+
 .slogan {
   min-height: 212px;
-  padding-top: 60px;
+
+  padding-top: 56px;
   
   font-size: 21px;
   line-height: 26px;
@@ -171,6 +189,14 @@ a {
   user-select: none;
   
   background-color: var(--theme-color-1);
+
+  outline: 1px dashed pink;
+}
+
+.slogan p {
+  padding: 0;
+  margin: 0;
+  margin-top: 27px;
 }
 
 .initiate {
@@ -184,10 +210,6 @@ a {
 
 
 /*-------- Блок преимуществ --------*/
-
-.features-and-services {
-  margin-top: -9px;
-}
 
 .features {
   display: flex;
@@ -271,7 +293,7 @@ a {
 }
 
 .features > .services li {
-  padding: 65px;
+  padding: 60px;
 
   width: calc(100% / 3);
   height: 330px;
@@ -280,4 +302,123 @@ a {
 .features svg {
   width: 76px;
   height: 76px;
+}
+
+
+/*---------- Поиск жилья ----------*/
+
+.inn-search {
+  min-height: 294px;
+  text-align: center;
+  border-top: 1px solid transparent;
+
+  position: relative;
+
+  /* outline: 1px dashed red; */
+}
+
+.inn-search > .title {
+  margin: 0;
+  padding: 0;
+  margin-top: 52px;
+  margin-bottom: 24px;
+
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 36px;
+}
+
+.inn-search > .offer {
+  margin: 0;
+  padding: 0;
+
+  line-height: 24px;
+}
+
+.inn-search > .btn-search {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 293px);
+
+  width: 586px;
+  height: 87px;
+
+  padding: 31px;
+
+  font-size: 21px;
+  line-height: 26px;
+
+  /* outline: 1px dashed green; */
+}
+
+
+/*------- Седона на карте -------*/
+
+.map {
+/*   height: 473px;
+  overflow: hidden; */
+
+  /* outline: 1px dashed green; */
+}
+
+
+/*------------ Подвал ------------*/
+
+.main-footer {
+  height: 120px;
+
+  padding: 36px 73px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-footer > * {
+  width: 240px;
+  height: 48px;
+
+  outline: 1px dashed red;
+}
+
+.main-footer > .visit {
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 26px;
+
+  padding: 10px;
+}
+.main-footer > .visit a {
+  margin-left: 55px;
+}
+
+.main-footer > .social {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+
+}
+
+.main-footer > .dev-link {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.main-footer > .dev-link a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  margin-right: 30px;
+}
+
+.main-footer > .dev-link span {
+}
+
+.main-footer > .dev-link svg {
+  width: 115px;
+  height: 42px;
+
+  margin: 0 5px;
 }
