@@ -24,6 +24,7 @@
 своего блока с
 сохранением пропорций */
 img {
+  display: block;
   max-width: 100%;
   height: auto;
 }
@@ -355,11 +356,12 @@ a {
 /*------- Седона на карте -------*/
 
 .map {
-/*   height: 473px;
-  overflow: hidden; */
+  height: 593px;
+  /* background-image: url(../img/map.png); */
 
   /* outline: 1px dashed green; */
 }
+
 
 
 /*------------ Подвал ------------*/
@@ -369,15 +371,33 @@ a {
 
   padding: 36px 73px;
 
+  /* Съезд на карту
+  на всю величину */
+  margin-top: -120px;
+
   display: flex;
+  align-items: center;
   justify-content: space-between;
+
+  /* Едва прозрачный фон (opacity
+  делает прозрачными также потомков,
+  потому используется альфа-канал) */
+  background-color: rgba(255, 255, 255, 0.9);
+
+  /* Создать контекст наложения;
+  в static z-index не отработает */
+  position: relative;
+  z-index: 1;
+  /* --------------------------- */
+
+  /* outline: 1px dashed red; */
 }
 
 .main-footer > * {
   width: 240px;
   height: 48px;
 
-  outline: 1px dashed red;
+  /* outline: 1px dashed red; */
 }
 
 .main-footer > .visit {
@@ -395,8 +415,26 @@ a {
   margin: 0;
   padding: 0;
   list-style: none;
+  
+  display: flex;
+  justify-content: center;
+}
 
+.main-footer > .social a {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 
+  width: 46px;
+  height: 48px;
+
+  margin-right: 6px;
+
+  background-color: var(--theme-color-2);
+}
+
+.main-footer > .social > li:last-child > a {
+  margin-right: 0;
 }
 
 .main-footer > .dev-link {
@@ -411,9 +449,6 @@ a {
   align-items: center;
 
   margin-right: 30px;
-}
-
-.main-footer > .dev-link span {
 }
 
 .main-footer > .dev-link svg {
