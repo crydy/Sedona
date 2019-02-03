@@ -60,6 +60,7 @@ html {
 html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 body {
@@ -76,13 +77,33 @@ a {
   text-decoration: inherit;
 }
 
+a:hover,
+a:focus {
+  color: var(--theme-color-2);
+  outline: none;
+}
+
+a:active {
+  color: black;
+  opacity: .3;
+}
+
 .container {
   width: 1200px;
   margin: 0 auto;
 
   background-color: var(--theme-color-1);
   box-shadow: 0 0 20px #bbb;
+  
+/* Прижать футек к низу браузера */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+.main-footer {
+  margin-top: auto;
+}
+
 
 /*------------- Кнопки -------------*/
 .btn {
@@ -104,6 +125,10 @@ a {
 /*-----------------------------------
 --------------- Шапка ---------------
 -----------------------------------*/
+
+.main-header {
+  outline: 1px dashed blue;
+}
 
 .main-navigation > ul {
   position: relative;
@@ -152,12 +177,17 @@ a {
   margin: 15px 0;
 }
 
+.main-navigation .active {
+  color: var(--theme-color-3);
+  user-select: none;
+}
+
 /* Отступ под основной фон на главной */
-.index .main-navigation > ul {
+.index-page-container .main-navigation > ul {
   margin-bottom: 512px;
 }
 /* Основной фон */
-.index {
+.index-page-container {
   background:
     url(../img/button-shape.png) 50% 511px no-repeat scroll,
     url(../img/text-because....png) 50% 405px no-repeat scroll,
@@ -191,7 +221,7 @@ a {
   
   background-color: var(--theme-color-1);
 
-  outline: 1px dashed pink;
+  /* outline: 1px dashed pink; */
 }
 
 .slogan p {
@@ -368,29 +398,29 @@ a {
 
 .main-footer {
   height: 120px;
-
   padding: 36px 73px;
-
-  /* Съезд на карту
-  на всю величину */
-  margin-top: -120px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  outline: 1px dashed red;
+}
+
+/* Подвал на главной
+со сдвигом на карту */
+.index-footer {
+  /* Съезд на карту
+  на всю величину */
+  margin-top: -120px;
 
   /* Едва прозрачный фон (opacity
   делает прозрачными также потомков,
   потому используется альфа-канал) */
   background-color: rgba(255, 255, 255, 0.9);
 
-  /* Создать контекст наложения;
-  в static z-index не отработает */
+  /* Отобразить поверх карты */
   position: relative;
-  z-index: 1;
-  /* --------------------------- */
-
-  /* outline: 1px dashed red; */
 }
 
 .main-footer > * {
