@@ -83,7 +83,7 @@ a:focus {
   outline: none;
 }
 
-a:active {
+a:active:not(:active) {
   color: black;
   opacity: .3;
 }
@@ -95,7 +95,7 @@ a:active {
   background-color: var(--theme-color-1);
   box-shadow: 0 0 20px #bbb;
   
-/* Прижать футек к низу браузера */
+/* Прижать футер к низу браузера */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -250,6 +250,7 @@ a:active {
   margin: 0;
 
   list-style: none;
+  user-select: none;
 }
 
 .features li {
@@ -392,9 +393,231 @@ a:active {
   /* outline: 1px dashed green; */
 }
 
+/*---- Пользовательский фильтр ----*/
+
+.user-select {
+  height: 216px;
+  display: flex;
+
+  padding: 25px 73px;
+
+  font-size: 16px;
+  
+  background:
+    url(../img/bg-blur.jpg) 50% 20% no-repeat
+    var(--theme-color-2);
+
+  color: var(--theme-color-1);
+  
+  outline: 1px dashed red;
+}
 
 
-/*------------ Подвал ------------*/
+.user-select > *,
+.user-select .price-ranging {
+  padding: 0;
+  margin: 0;
+  border: none;
+  /* outline: 1px dashed greenyellow; */
+}
+
+.user-select fieldset {
+  display: flex;
+  
+}
+
+.user-select fieldset:not(.price-ranging) > * {
+  width: 254px;
+  padding-bottom: 28px;
+}
+
+.user-select legend {
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: bold;
+}
+
+.user-select > .right-column-wrap {
+  margin-left: auto;
+  text-align: center;
+}
+
+.user-select .price-ranging-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 20px;
+  width: 318px;
+  height: 36px;
+
+  border: 2px solid var(--theme-color-1);
+  border-radius: 2px;
+
+  text-align: center;
+}
+
+.user-select .price-ranging-wrap::before {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 22px;
+  left: 156px;
+  background-color: var(--theme-color-1);
+}
+
+.user-select .price-ranging legend {
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.user-select .price-ranging-wrap p {
+  margin: 0;
+  padding: 0;
+  width: 50%;
+}
+
+.user-select .user-select-btn {
+  background-color: transparent;
+  border: 2px solid var(--theme-color-1);
+  border-radius: 2px;
+  color: inherit;
+
+  width: 138px;
+  height: 36px;
+  cursor: pointer;
+}
+
+
+/*----- Кастомизация чекбоксов -----*/
+
+.user-select label {
+  user-select: none;
+  position: relative;
+  padding-left: 37px;
+  cursor: pointer;
+}
+
+/* Чекбокс-индикатор */
+.user-select input[type="checkbox"] + .checkbox-indicator {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  
+  width: 20px;
+  height: 20px;
+  
+  border: 2px solid rgba(255, 255, 255, .8);
+  border-radius: 2px;
+}
+.user-select input[type="checkbox"]:hover + .checkbox-indicator,
+.user-select input[type="checkbox"]:focus + .checkbox-indicator {
+  border-color: white;
+}
+.user-select input[type="checkbox"]:disabled + .checkbox-indicator {
+  border-color: rgba(255, 255, 255, .4);
+}
+
+/* Метка чекбокс-индикатора */
+.user-select input[type="checkbox"]:checked + .checkbox-indicator::after {
+  content: "";
+
+  position: absolute;
+  top: 5px;
+  left: 5px;
+
+  width: 18px;
+  height: 4px;
+
+  background-color: #eef1ef;
+  transform: rotate(-45deg);
+}
+.user-select input[type="checkbox"]:checked + .checkbox-indicator::before {
+  content: "";
+
+  position: absolute;
+  top: 7px;
+  left: 0px;
+
+  width: 11px;
+  height: 4px;
+
+  background-color: #eef1ef;
+  transform: rotate(45deg);
+}
+.user-select input[type="checkbox"]:hover:checked + .checkbox-indicator::before,
+.user-select input[type="checkbox"]:focus:checked + .checkbox-indicator::before,
+.user-select input[type="checkbox"]:hover:checked + .checkbox-indicator::after,
+.user-select input[type="checkbox"]:focus:checked + .checkbox-indicator::after {
+  background-color: white;
+}
+
+
+/*--- Слайдер ронжирования цены ---*/
+
+.ranging-slider {
+  position: relative;
+
+  margin: 8px auto;
+  margin-bottom: 30px;
+  width: 318px;
+  height: 2px;
+
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.inner-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  
+  height: 2px;
+
+  background-color: white;
+}
+
+.thumb-1,
+.thumb-2 {
+  position: absolute;
+  top: -9px;
+  z-index: 2;
+
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+
+  background-color: white;
+}
+
+.thumb-1 {
+  left: 0px;
+}
+.thumb-2 {
+  left: 298px;
+}
+
+.thumb-1:hover,
+.thumb-2:hover {
+  cursor: pointer;
+}
+
+.thumb-1::before,
+.thumb-2::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 10;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #ababab;
+}
+
+
+/*----------------------------------
+-------------- Подвал --------------
+----------------------------------*/
 
 .main-footer {
   height: 120px;

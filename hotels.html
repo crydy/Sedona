@@ -33,7 +33,76 @@
   <main>
     <h1 class="visually-hidden">Поиск гостиницы в Седоне</h1>
 
+    <!-- Форма поиска -->
+    <form action="#" method="get" class="user-select">
 
+      <!-- Инфраструктура -->
+      <fieldset class="infrastructure">
+        <legend>Инфраструктура</legend>
+
+        <label for="pool">
+          <input type="checkbox" name="infrastructure" id="pool" class="visually-hidden" checked>
+          <span class="checkbox-indicator"></span>
+          Бассеин
+        </label>
+        
+        <label for="parking">
+          <input type="checkbox" name="infrastructure" id="parking" class="visually-hidden" disabled>
+          <span class="checkbox-indicator"></span>
+          Паркинг
+        </label>
+        
+        <label for="wi-fi">
+          <input type="checkbox" name="infrastructure" id="wi-fi" class="visually-hidden">
+          <span class="checkbox-indicator"></span>
+          Wi-Fi
+        </label>
+      </fieldset>
+
+      <!-- Тип жилья -->
+      <fieldset class="room-type">
+        <legend>Тип жилья</legend>
+
+        <label for="hotel">
+          <input type="checkbox" name="room-type" id="hotel" class="visually-hidden" checked>
+          <span class="checkbox-indicator"></span>
+          Гостиница
+        </label>
+        
+        <label for="motel">
+          <input type="checkbox" name="room-type" id="motel" class="visually-hidden" checked>
+          <span class="checkbox-indicator"></span>
+          Мотель
+        </label>
+        
+        <label for="apartments">
+          <input type="checkbox" name="room-type" id="apartments" class="visually-hidden" checked>
+          <span class="checkbox-indicator"></span>
+          Апартаменты
+        </label>
+      </fieldset>
+
+      <!-- Фильтр цены -->
+      <div class="right-column-wrap">
+        <fieldset class="price-ranging">
+          <legend>Стоимость в сутки (р):</legend>
+          <div class="price-ranging-wrap">
+            <p>
+              От <span class="start-price">0</span>
+            </p>
+            <p>
+              До <span class="end-price">3000</span>
+            </p>
+          </div>
+          <div class="ranging-slider">
+            <div class="thumb-1"></div>
+            <div class="inner-bar"></div>
+            <div class="thumb-2"></div>
+          </div>
+        </fieldset>
+        <button type="submit" class="user-select-btn">Показать</button>
+      </div>
+    </form>
 
 
 
@@ -41,6 +110,7 @@
 
 
   </main>
+
 
   <!-- Подвал -->
   <footer class="main-footer">
