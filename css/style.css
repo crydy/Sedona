@@ -180,7 +180,7 @@ a:active:not(.active) {
 }
 
 /* Логотип в навигации */
-.main-navigation ul > li:nth-child(1) {
+.main-navigation ul > li:first-child {
   width: 138px;
   height: 70px;
 
@@ -191,12 +191,22 @@ a:active:not(.active) {
   top: -15px;
 }
 
-.main-navigation a {
+.main-navigation .logo {
+  display: block;
   text-decoration: none;
   line-height: 26px;
 }
+
+.main-navigation .logo:active {
+  opacity: 1;
+}
+
 .main-navigation li {
   margin: 15px 0;
+}
+
+.main-navigation img {
+  display: unset;
 }
 
 .main-navigation .active {
@@ -437,6 +447,7 @@ a:active:not(.active) {
   padding: 25px 73px;
 
   font-size: 16px;
+  user-select: none;
   
   background:
     url(../img/bg-blur.jpg) 50% 20% no-repeat
@@ -525,8 +536,19 @@ a:active:not(.active) {
   cursor: pointer;
 }
 
+.user-select .user-select-btn:hover,
+.user-select .user-select-btn:focus {
+  background-color: var(--theme-color-1);
+  color: black;
+  outline: none;
+}
 
-/*----- Кастомизация чекбоксов -----*/
+.user-select .user-select-btn:active {
+  opacity: .7;
+}
+
+
+/*----- Кастомные чекбоксы -----*/
 
 .user-select label {
   user-select: none;
@@ -651,15 +673,18 @@ a:active:not(.active) {
   background-color: #ababab;
 }
 
+
 /* Пользовательская сортировка */
+
 .user-sort {
   height: 86px;
+  padding: 30px 73px;
   
   display: flex;
   align-items: baseline;
 
-  padding: 30px 73px;
-
+  user-select: none;
+  
   border-bottom: 1px solid grey;
 
   /* outline: 1px dashed red; */
@@ -739,8 +764,10 @@ a:active:not(.active) {
   border: 5.5px solid transparent;
   border-top: 1px;
   border-bottom: 10px solid #cacaca;
-/*   border: 20px solid green; 
-  width: 0; */
+}
+
+.user-sort .select-dir-btn:not(.active) {
+  cursor: pointer;
 }
 
 .user-sort .select-dir-btn:last-child {
@@ -958,15 +985,27 @@ a:active:not(.active) {
   margin-right: 6px;
 }
 
-.main-footer > .social > li:hover,
-.main-footer > .social > li:focus-within {
-  background-color: red;
+.main-footer > .social a:hover,
+.main-footer > .social a:focus {
+  background-color: var(--theme-color-2-2);
+}
+
+.main-footer > .social a:active {
+  background-color: var(--theme-color-2-3);
+}
+
+.main-footer > .social a:active svg {
+  opacity: .3;
 }
 
 .main-footer > .dev-link {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+.main-footer > .dev-link span {
+  user-select: none;
 }
 
 .main-footer > .dev-link a {
@@ -977,9 +1016,25 @@ a:active:not(.active) {
   margin-right: 30px;
 }
 
+.main-footer > .dev-link a:active {
+  opacity: 1;
+}
+
 .main-footer > .dev-link svg {
   width: 115px;
   height: 42px;
 
   margin: 0 5px;
+}
+
+.main-footer > .dev-link a:hover rect,
+.main-footer > .dev-link a:hover path,
+.main-footer > .dev-link a:focus rect,
+.main-footer > .dev-link a:focus path {
+  fill: var(--theme-color-2);
+}
+
+.main-footer > .dev-link a:active rect,
+.main-footer > .dev-link a:active path {
+  fill: #bdbbbc;
 }
