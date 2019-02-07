@@ -154,21 +154,21 @@ a:active:not(.active) {
 
 .main-navigation > ul {
   position: relative;
-  padding: 0;
+  padding: 0 37px;
   margin: 0;
 
   list-style-type: none;
   font-weight: bold;
 
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 
   background-color: var(--theme-color-1);
 }
 
 .main-navigation li {
   text-align: center;
-  min-width: 150px;
+  min-width: 165px;
 }
 
 /* Пространство для логотипа */
@@ -187,7 +187,7 @@ a:active:not(.active) {
   order: 3;
   
   position: absolute;
-  left: calc(50% - 69px);
+  left: calc(50% - 82.5px);
   top: -15px;
 }
 
@@ -216,12 +216,13 @@ a:active:not(.active) {
 
 /* Отступ под основной фон на главной */
 .index-page-container .main-navigation > ul {
+  height: 51px;
   margin-bottom: 512px;
 }
 /* Основной фон */
 .index-page-container {
   background:
-    url(../img/button-shape.png) 50% 511px no-repeat scroll,
+    url(../img/button-shape.png) 50% 506px no-repeat scroll,
     url(../img/text-because....png) 50% 405px no-repeat scroll,
     url(../img/text-sedona.png) 50% 270px no-repeat scroll,
     url(../img/dashes.png) 50% 200px no-repeat scroll,
@@ -352,6 +353,8 @@ a:active:not(.active) {
 .features .services ul {
   display: flex;
 
+  list-style: none;
+
   padding: 0;
   margin: 0;
 }
@@ -429,14 +432,18 @@ a:active:not(.active) {
 }
 
 
-/*------- Седона на карте -------*/
+/*------- Карта -------*/
 
 .map {
+  position: relative;
   height: 593px;
-  /* background-image: url(../img/map.png); */
-
-  /* outline: 1px dashed green; */
 }
+
+.live-map {
+  position: absolute;
+  top: 0;
+}
+
 
 /*---- Пользовательский фильтр ----*/
 
@@ -469,7 +476,7 @@ a:active:not(.active) {
 
 .user-select fieldset {
   display: flex;
-  
+  flex-direction: column;
 }
 
 .user-select fieldset:not(.price-ranging) > * {
