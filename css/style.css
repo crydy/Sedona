@@ -408,7 +408,7 @@ a:active:not(.active) {
   bottom: 0;
   left: calc(50% - 293px);
 
-  width: 586px;
+  width: 570px;
   height: 87px;
 
   padding: 31px;
@@ -455,13 +455,12 @@ a:active:not(.active) {
 
   font-size: 16px;
   user-select: none;
-  
-  background:
-    url(../img/bg-blur.jpg) 50% 20% no-repeat
-    var(--theme-color-2);
 
   color: var(--theme-color-1);
   
+  background: url(../img/bg-blur.jpg) 50% 20% no-repeat;
+  background-color: var(--theme-color-2);
+
   /* outline: 1px dashed red; */
 }
 
@@ -474,12 +473,12 @@ a:active:not(.active) {
   /* outline: 1px dashed greenyellow; */
 }
 
-.user-select fieldset {
+.user-select .fieldset-wrap {
   display: flex;
   flex-direction: column;
 }
 
-.user-select fieldset:not(.price-ranging) > * {
+.user-select .fieldset-wrap:not(.price-ranging) > * {
   width: 254px;
   padding-bottom: 28px;
 }
@@ -1044,4 +1043,194 @@ a:active:not(.active) {
 .main-footer > .dev-link a:active rect,
 .main-footer > .dev-link a:active path {
   fill: #bdbbbc;
+}
+
+
+/*---- Всплывашка поиска жилья ----*/
+
+.inn-search-pop-up form {
+  width: 570px;
+  margin: 0 auto;
+  padding: 55px;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--theme-color-1);
+
+  line-height: 26px;
+  font-weight: bold;
+
+  /* Временно */
+/*   outline: 1px dashed red;
+  margin-bottom: 150px;
+  margin-top: 10px; */
+}
+
+.inn-search-pop-up .input-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 30px;
+  
+  /* outline: 1px dashed blueviolet; */
+}
+
+.inn-search-pop-up .input-wrap:nth-child(3) {
+  margin-bottom: 55px;
+}
+
+/* .inn-search-pop-up {
+  margin-right: 15px;
+} */
+
+.inn-search-pop-up .inner-wrap {
+  width: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inn-search-pop-up .inner-wrap:last-child label {
+  margin-left: 52px;
+}
+
+.inn-search-pop-up input {
+  font: inherit;
+  text-transform: inherit;
+  line-height: 38px;
+  padding: 0 8px;
+  
+  background-color: #f2f2f2;
+  border: none;
+}
+
+.inn-search-pop-up input:hover,
+.inn-search-pop-up input.arrow-hover {
+  background-color: #ebebeb;
+}
+
+.inn-search-pop-up input:focus,
+.inn-search-pop-up input.arrow-control {
+  background-color: white;
+  box-shadow: inset 0 0 0 2px #ebebeb;
+  outline: none;
+}
+
+.inn-search-pop-up input:not(.guest-amount) {
+  flex-grow: 1;
+  max-width: 345px;
+}
+
+.inn-search-pop-up input.guest-amount {
+  width: 115px;
+  text-align: center;
+}
+
+.inn-search-pop-up-btn {
+  flex-grow: 1;
+  line-height: 58px;
+}
+
+.inn-search-pop-up-btn:active {
+  color: #73a9c9;
+}
+
+
+/* Кастомная иконка календаря для Chromium */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  /* color: #a9a9a9; */
+  opacity: 1;
+  display: block;
+  background: url(../img/calendar-icon.svg) 50% 50% no-repeat;
+  width: 20px;
+  height: 20px;
+  border-width: thin;
+}
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  background-image: url(../img/calendar-icon-hover.svg);
+  cursor: pointer;
+}
+input[type="date"]::-webkit-calendar-picker-indicator:active {
+  background-image: url(../img/calendar-icon-active.svg);
+}
+/* Убрать внутренние маленькие стрелки */
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+
+/* Кастомные номерные инпуты */
+
+/* Убрать встроенные стрелки-кнопки */
+.inn-search-pop-up input.delete-default-arrows::-webkit-inner-spin-button {
+  display: none;
+}
+
+.inn-search-pop-up .new-arrows {
+  position: relative;
+}
+
+.inn-search-pop-up .arrow-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 38px;
+  height: 38px;
+  /* background-color: lightcyan; */
+  cursor: pointer;
+}
+
+.inn-search-pop-up .arrow-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 38px;
+  height: 38px;
+  /* background-color: lightcyan; */
+  cursor: pointer;
+}
+
+.inn-search-pop-up .arrow-left::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 18px;
+  width: 11px;
+  height: 3px;
+  background-color: #a9a9a9;
+}
+
+.inn-search-pop-up .arrow-right::before {
+  content: "";
+  position: absolute;
+  right: 14px;
+  top: 18px;
+  width: 11px;
+  height: 3px;
+  background-color: #a9a9a9;
+}
+.inn-search-pop-up .arrow-right::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  width: 3px;
+  height: 11px;
+  background-color: #a9a9a9;
+}
+.inn-search-pop-up .arrow-left:hover::before, .inn-search-pop-up .arrow-right:hover::before {
+  background-color: #000;
+}
+.inn-search-pop-up .arrow-right:hover::after {
+  background-color: #000;
+}
+.inn-search-pop-up .arrow-left:active::before, .inn-search-pop-up .arrow-right:active::before {
+  background-color: var(--theme-color-2);
+}
+.inn-search-pop-up .arrow-right:active::after {
+  background-color: var(--theme-color-2);
 }

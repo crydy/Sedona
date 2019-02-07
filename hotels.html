@@ -41,48 +41,52 @@
 
       <!-- Инфраструктура -->
       <fieldset class="infrastructure">
-        <legend>Инфраструктура</legend>
-
-        <label for="pool">
-          <input type="checkbox" name="infrastructure" id="pool" class="visually-hidden" checked>
-          <span class="checkbox-indicator"></span>
-          Бассеин
-        </label>
-        
-        <label for="parking">
-          <input type="checkbox" name="infrastructure" id="parking" class="visually-hidden" disabled>
-          <span class="checkbox-indicator"></span>
-          Паркинг
-        </label>
-        
-        <label for="wi-fi">
-          <input type="checkbox" name="infrastructure" id="wi-fi" class="visually-hidden">
-          <span class="checkbox-indicator"></span>
-          Wi-Fi
-        </label>
+        <div class="fieldset-wrap"> <!-- Edje не может fieldset-flex -->
+          <legend>Инфраструктура</legend>
+  
+          <label for="pool">
+            <input type="checkbox" name="infrastructure" id="pool" class="visually-hidden" checked>
+            <span class="checkbox-indicator"></span>
+            Бассеин
+          </label>
+          
+          <label for="parking">
+            <input type="checkbox" name="infrastructure" id="parking" class="visually-hidden" disabled>
+            <span class="checkbox-indicator"></span>
+            Паркинг
+          </label>
+          
+          <label for="wi-fi">
+            <input type="checkbox" name="infrastructure" id="wi-fi" class="visually-hidden">
+            <span class="checkbox-indicator"></span>
+            Wi-Fi
+          </label>
+        </div>
       </fieldset>
 
       <!-- Тип жилья -->
       <fieldset class="room-type">
-        <legend>Тип жилья</legend>
-
-        <label for="hotel">
-          <input type="checkbox" name="room-type" id="hotel" class="visually-hidden" checked>
-          <span class="checkbox-indicator"></span>
-          Гостиница
-        </label>
-        
-        <label for="motel">
-          <input type="checkbox" name="room-type" id="motel" class="visually-hidden" checked>
-          <span class="checkbox-indicator"></span>
-          Мотель
-        </label>
-        
-        <label for="apartments">
-          <input type="checkbox" name="room-type" id="apartments" class="visually-hidden" checked>
-          <span class="checkbox-indicator"></span>
-          Апартаменты
-        </label>
+        <div class="fieldset-wrap">
+          <legend>Тип жилья</legend>
+  
+          <label for="hotel">
+            <input type="checkbox" name="room-type" id="hotel" class="visually-hidden" checked>
+            <span class="checkbox-indicator"></span>
+            Гостиница
+          </label>
+          
+          <label for="motel">
+            <input type="checkbox" name="room-type" id="motel" class="visually-hidden" checked>
+            <span class="checkbox-indicator"></span>
+            Мотель
+          </label>
+          
+          <label for="apartments">
+            <input type="checkbox" name="room-type" id="apartments" class="visually-hidden" checked>
+            <span class="checkbox-indicator"></span>
+            Апартаменты
+          </label>
+        </div>
       </fieldset>
 
       <!-- Фильтр цены -->

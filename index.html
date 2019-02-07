@@ -247,6 +247,48 @@
     </div>
   </footer>
 
+  <!-- Модальные окна -->
+  <div class="inn-search-pop-up">
+    <form action="" method="post">
+
+      <div class="input-wrap">
+        <label for="arrival-date">Дата заезда:</label>
+        <input id="arrival-date" type="date" class="arrival-date">
+      </div>
+
+      <div class="input-wrap">
+        <label for="departure-date">Дата выезда:</label>
+        <input id="departure-date" type="date" class="departure-date">
+      </div>
+
+      <div class="input-wrap">
+        <div class="inner-wrap">
+          <label for="adults-amount">Взрослые:</label>
+          <div class="cust-wrap">
+            <div class="arrow-left"></div>
+            <div class="arrow-right"></div>
+            <input id="adults-amount" type="number" class="guest-amount adults-amount" value="2">
+          </div>
+        </div>
+
+        <div class="inner-wrap">
+          <label for="children-amount">Дети:</label>
+          <div class="cust-wrap">
+            <div class="arrow-left"></div>
+            <div class="arrow-right"></div>
+            <input id="children-amount" type="number" class="guest-amount children-amount" value="0">
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn inn-search-pop-up-btn">Найти</button>
+
+    </form>
   </div>
+
+  </div>
+
+  <!-- Скрипты -->
+  <script async src="js/modal.js"></script>
 </body>
 </html>
