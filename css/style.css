@@ -375,7 +375,7 @@ a:active:not(.active) {
 /*---------- Поиск жилья ----------*/
 
 .inn-search {
-  min-height: 294px;
+  height: 294px;
   text-align: center;
   user-select: none;
   border-top: 1px solid transparent;
@@ -1049,6 +1049,11 @@ a:active:not(.active) {
 /*---- Всплывашка поиска жилья ----*/
 
 .inn-search-pop-up form {
+  position: absolute;
+  top: 293px;
+  left: calc(50% - 293px);
+  z-index: 1;
+
   width: 570px;
   margin: 0 auto;
   padding: 55px;

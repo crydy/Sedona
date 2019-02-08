@@ -1,6 +1,27 @@
 'use string'
 
-/*------- Кастомизация инпутов в модалке -------*/
+/*------- Вставить модалку на место -------*/
+
+let popup = document.querySelector('.inn-search-pop-up');
+let innSearch = document.querySelector('.inn-search');
+
+innSearch.prepend(popup);
+
+
+/*---------- Показывать по клику ----------*/
+
+let showFormBtn = document.querySelector('.inn-search .btn-search');
+
+function showForm(evt) {
+  evt.preventDefault();
+  popup.hidden = !popup.hidden;
+}
+
+showFormBtn.addEventListener('click', showForm);
+
+
+
+/*------- Кастомизация и поведение инпутов в модалке -------*/
 
 let numInputsWrap = document.querySelectorAll('.inn-search-pop-up .cust-wrap');
 
@@ -15,6 +36,16 @@ for (let wrap of numInputsWrap) {
 
   // включить новые кнопки через CSS
   wrap.classList.add('new-arrows');
+
+  // очистить поле при фокусе внутри
+  numInput.addEventListener('focus', function(evt) {
+    this.value = '';
+  });
+
+  // ноль, если при потере фокуса поле пустое
+  numInput.addEventListener('blur', function(evt) {
+    if(!this.value) this.value = 0;
+  });
 
   // имитация input-hover
   wrap.addEventListener('mouseenter', function() {
@@ -36,7 +67,7 @@ for (let wrap of numInputsWrap) {
     if(evt.target.classList.contains('arrow-left') && numInput.value >= 1) {
       // ...убавляем значение input
       numInput.value--;
-      
+      // запретить выделение текста в инпуте при быстром парном клике
       dontSelectText();
     }
 
@@ -44,7 +75,7 @@ for (let wrap of numInputsWrap) {
     if(evt.target.classList.contains('arrow-right')) {
       // ...добавляем значение input
       numInput.value++;
-
+      // запретить выделение текста в инпуте при быстром парном клике
       dontSelectText();
     }
 
@@ -65,10 +96,3 @@ for (let wrap of numInputsWrap) {
 }
 
 
-/* Вставить форму поверх карты */
-
-/* let popup = document.querySelector('.inn-search-pop-up');
-let innSearch = document.querySelector('.inn-search');
-console.log(innSearch);
-
-innSearch.prepend(popup); */
