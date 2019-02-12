@@ -8,17 +8,36 @@ let innSearch = document.querySelector('.inn-search');
 innSearch.prepend(popup);
 
 
-/*---------- Показывать по клику ----------*/
+/*---------- Показывать и скрывать по клику ----------*/
 
 let showFormBtn = document.querySelector('.inn-search .btn-search');
 
-function showForm(evt) {
+function toggleDisplayElem(evt) {
   evt.preventDefault();
-  popup.hidden = !popup.hidden;
+
+  if (popup.hidden && !timerId) {
+
+    // отобразить форму
+    popup.hidden = false;
+    // фокус на первое поле формы
+    popup.querySelector('input').focus();
+    // css-анимация появления
+    popup.classList.add('show');
+
+  } else if (!popup.hidden) {
+
+    // css-анимация скрытия
+    popup.classList.remove('show');
+    // удалить форму через 0.6сек
+    var timerId = setTimeout(function() {
+      popup.hidden = true;
+    }, 600);
+    
+  };
+  
 }
 
-showFormBtn.addEventListener('click', showForm);
-
+showFormBtn.addEventListener('click', toggleDisplayElem);
 
 
 /*------- Кастомизация и поведение инпутов в модалке -------*/
@@ -30,21 +49,23 @@ for (let wrap of numInputsWrap) {
 
   // получить инпут от обертки в текущей итерации
   let numInput = wrap.querySelector('.inn-search-pop-up .guest-amount');
+  // хранение значения input
+  let inputValue;
 
   // убрать оригинальные кнопки-стрелки через CSS
   numInput.classList.add('delete-default-arrows');
-
   // включить новые кнопки через CSS
   wrap.classList.add('new-arrows');
 
-  // очистить поле при фокусе внутри
-  numInput.addEventListener('focus', function(evt) {
+  // очистить поле при получении фокуса инпутом
+  numInput.addEventListener('focus', function() {
+    inputValue = this.value;
     this.value = '';
   });
 
-  // ноль, если при потере фокуса поле пустое
-  numInput.addEventListener('blur', function(evt) {
-    if(!this.value) this.value = 0;
+  // если при потере фокуса поле пустое, вернуть предыдущее значение
+  numInput.addEventListener('blur', function() {
+    if(!this.value) this.value = inputValue;
   });
 
   // имитация input-hover
@@ -56,7 +77,7 @@ for (let wrap of numInputsWrap) {
     numInput.classList.remove('arrow-control');
   })
 
-  // прослушка кликов
+  // прослушка кликов на кастомные кнопки
   wrap.addEventListener('click', function(evt) {
     evt.preventDefault();
 
@@ -65,7 +86,7 @@ for (let wrap of numInputsWrap) {
 
     // если клик на минус...
     if(evt.target.classList.contains('arrow-left') && numInput.value >= 1) {
-      // ...убавляем значение input
+      // ...убавить значение input
       numInput.value--;
       // запретить выделение текста в инпуте при быстром парном клике
       dontSelectText();
@@ -73,7 +94,7 @@ for (let wrap of numInputsWrap) {
 
     // если клик на плюс...
     if(evt.target.classList.contains('arrow-right')) {
-      // ...добавляем значение input
+      // ...добавить значение input
       numInput.value++;
       // запретить выделение текста в инпуте при быстром парном клике
       dontSelectText();
@@ -94,5 +115,3 @@ for (let wrap of numInputsWrap) {
   });
 
 }
-
-

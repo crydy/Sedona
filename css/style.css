@@ -25,6 +25,7 @@
 сохранением пропорций */
 img {
   display: block;
+
   max-width: 100%;
   height: auto;
 }
@@ -34,10 +35,10 @@ img {
 input[type="checkbox"].visually-hidden,
 input[type="radio"].visually-hidden {
   position: absolute;
-
   width: 1px;
   height: 1px;
   margin: -1px;
+
   border: 0;
   padding: 0;
 
@@ -73,14 +74,15 @@ body {
 }
 
 a {
-  color: inherit;
   text-decoration: inherit;
+  color: inherit;
 }
 
 a:hover,
 a:focus {
   color: var(--theme-color-2);
   outline: none;
+  
 }
 
 a:active:not(.active) {
@@ -95,7 +97,7 @@ a:active:not(.active) {
   background-color: var(--theme-color-1);
   box-shadow: 0 0 20px #bbb;
   
-/* Прижать футер к низу браузера */
+  /* Прижать футер вниз вьюпорта */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -107,16 +109,19 @@ a:active:not(.active) {
 
 /*------------- Кнопки -------------*/
 .btn {
-  background-color: var(--theme-color-2);
-  color: var(--theme-color-1);
   display: inline-block;
-  border: none;
+  
   font-family: inherit;
   font-size: inherit;
   font-weight: bold;
   line-height: inherit;
   text-transform: inherit;
+  
+  border: none;
   cursor: pointer;
+
+  color: var(--theme-color-1);
+  background-color: var(--theme-color-2);
 }
 
 .btn:hover,
@@ -157,8 +162,8 @@ a:active:not(.active) {
   padding: 0 37px;
   margin: 0;
 
-  list-style-type: none;
   font-weight: bold;
+  list-style-type: none;
 
   display: flex;
   justify-content: space-between;
@@ -193,8 +198,8 @@ a:active:not(.active) {
 
 .main-navigation .logo {
   display: block;
-  text-decoration: none;
   line-height: 26px;
+  text-decoration: none;
 }
 
 .main-navigation .logo:active {
@@ -210,8 +215,8 @@ a:active:not(.active) {
 }
 
 .main-navigation .active {
-  color: var(--theme-color-3);
   user-select: none;
+  color: var(--theme-color-3);
 }
 
 /* Отступ под основной фон на главной */
@@ -219,7 +224,7 @@ a:active:not(.active) {
   height: 51px;
   margin-bottom: 512px;
 }
-/* Основной фон */
+/* Основной фон на главной */
 .index-page-container {
   background:
     url(../img/button-shape.png) 50% 506px no-repeat scroll,
@@ -243,18 +248,15 @@ a:active:not(.active) {
 
 .slogan {
   min-height: 212px;
-
   padding-top: 56px;
   
   font-size: 21px;
+  font-weight: bold;
   line-height: 26px;
   text-align: center;
-  font-weight: bold;
   user-select: none;
   
   background-color: var(--theme-color-1);
-
-  /* outline: 1px dashed pink; */
 }
 
 .slogan p {
@@ -308,12 +310,12 @@ a:active:not(.active) {
 }
 
 .features > .major {
-  background-color: var(--theme-color-2);
-  color: var(--theme-color-1);
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  background-color: var(--theme-color-2);
+  color: var(--theme-color-1);
 }
 
 .features > .major > .info {
@@ -353,15 +355,14 @@ a:active:not(.active) {
 .features .services ul {
   display: flex;
 
-  list-style: none;
-
   padding: 0;
   margin: 0;
+
+  list-style: none;
 }
 
 .features > .services li {
   padding: 60px;
-
   width: calc(100% / 3);
   height: 330px;
 }
@@ -375,14 +376,14 @@ a:active:not(.active) {
 /*---------- Поиск жилья ----------*/
 
 .inn-search {
-  height: 294px;
-  text-align: center;
-  user-select: none;
-  border-top: 1px solid transparent;
-
   position: relative;
 
-  /* outline: 1px dashed red; */
+  height: 294px;
+
+  text-align: center;
+  user-select: none;
+
+  border-top: 1px solid transparent;
 }
 
 .inn-search > .title {
@@ -415,19 +416,17 @@ a:active:not(.active) {
 
   font-size: 21px;
   line-height: 26px;
-
-  /* outline: 1px dashed green; */
 }
 
 .inn-search > .btn-search:hover,
 .inn-search > .btn-search:focus {
-  background-color: var(--theme-color-3-2);
   color: var(--theme-color-1);
+  background-color: var(--theme-color-3-2);
 }
 
 .inn-search > .btn-search:active {
-  background-color: var(--theme-color-3-3);
   color: var(--theme-color-1);
+  background-color: var(--theme-color-3-3);
   opacity: 1;
 }
 
@@ -455,13 +454,10 @@ a:active:not(.active) {
 
   font-size: 16px;
   user-select: none;
-
-  color: var(--theme-color-1);
   
+  color: var(--theme-color-1);
   background: url(../img/bg-blur.jpg) 50% 20% no-repeat;
   background-color: var(--theme-color-2);
-
-  /* outline: 1px dashed red; */
 }
 
 
@@ -470,7 +466,6 @@ a:active:not(.active) {
   padding: 0;
   margin: 0;
   border: none;
-  /* outline: 1px dashed greenyellow; */
 }
 
 .user-select .fieldset-wrap {
@@ -496,12 +491,13 @@ a:active:not(.active) {
 
 .user-select .price-ranging-wrap {
   position: relative;
-  display: flex;
-  align-items: center;
 
   margin-bottom: 20px;
   width: 318px;
   height: 36px;
+
+  display: flex;
+  align-items: center;
 
   border: 2px solid var(--theme-color-1);
   border-radius: 2px;
@@ -510,11 +506,14 @@ a:active:not(.active) {
 }
 
 .user-select .price-ranging-wrap::before {
-  position: absolute;
   content: "";
+
+  position: absolute;
+  left: 156px;
+
   width: 2px;
   height: 22px;
-  left: 156px;
+
   background-color: var(--theme-color-1);
 }
 
@@ -530,16 +529,18 @@ a:active:not(.active) {
 }
 
 .user-select .user-select-btn {
-  background-color: transparent;
-  border: 2px solid var(--theme-color-1);
-  border-radius: 2px;
-  color: inherit;
-  text-transform: inherit;
-  font-family: inherit;
-
   width: 138px;
   height: 36px;
+
+  font-family: inherit;
+  text-transform: inherit;
+  
+  border: 2px solid var(--theme-color-1);
+  border-radius: 2px;
+
   cursor: pointer;
+  color: inherit;
+  background-color: transparent;
 }
 
 .user-select .user-select-btn:hover,
@@ -550,16 +551,21 @@ a:active:not(.active) {
 }
 
 .user-select .user-select-btn:active {
-  opacity: .7;
+  /* opacity: .7; */
+  color: var(--theme-color-1);
+  background-color: var(--theme-color-2);
+  /* background-color: transparent; */
 }
 
 
 /*----- Кастомные чекбоксы -----*/
 
 .user-select label {
-  user-select: none;
   position: relative;
+
   padding-left: 37px;
+
+  user-select: none;
   cursor: pointer;
 }
 
@@ -649,8 +655,8 @@ a:active:not(.active) {
 
   height: 20px;
   width: 20px;
-  border-radius: 10px;
 
+  border-radius: 10px;
   background-color: white;
 }
 
@@ -669,12 +675,15 @@ a:active:not(.active) {
 .thumb-1::before,
 .thumb-2::before {
   content: "";
+
   position: absolute;
   top: 8px;
   left: 8px;
   z-index: 10;
+
   width: 4px;
   height: 4px;
+
   border-radius: 2px;
   background-color: #ababab;
 }
@@ -692,8 +701,6 @@ a:active:not(.active) {
   user-select: none;
   
   border-bottom: 1px solid grey;
-
-  /* outline: 1px dashed red; */
 }
 
 .user-sort p,
@@ -703,17 +710,15 @@ a:active:not(.active) {
 
   font-size: 12px;
   line-height: 18px;
-
 }
 
 .user-sort .search-amount {
   width: 135px;
+  margin-right: 30px;
 
   font-size: 21px;
   font-weight: bold;
   line-height: 26px;
-
-  margin-right: 30px;
 }
 
 .user-sort .sort-title {
@@ -723,10 +728,10 @@ a:active:not(.active) {
 .user-sort ul {
   padding: 0;
   margin: 0;
+
   list-style: none;
   
   display: flex;
-  /* outline: 1px dashed green; */
 }
 
 .user-sort li:not(:last-child) {
@@ -739,24 +744,25 @@ a:active:not(.active) {
 }
 
 .user-sort a:not(.active) {
-  color: rgba(0, 0, 0, .7);
   border-bottom: 1px dotted rgba(0, 0, 0, .7);
+  color: rgba(0, 0, 0, .7);
 }
 
 .user-sort a:not(.active):hover,
 .user-sort a:not(.active):focus {
-  color: var(--theme-color-2);
   border-bottom-color: var(--theme-color-2);
+  color: var(--theme-color-2);
 }
 
 .user-sort a:not(.active):active {
-  color: black;
   border-bottom-color: none;
+  color: black;
 }
 
 .sort-direction {
   margin-left: auto;
   width: 34px;
+
   align-self: center;
 
   display: flex;
@@ -765,11 +771,12 @@ a:active:not(.active) {
 
 .user-sort .select-dir-btn {
   padding: 0;
-  background-color: transparent;
   
   border: 5.5px solid transparent;
   border-top: 1px;
   border-bottom: 10px solid #cacaca;
+
+  background-color: transparent;
 }
 
 .user-sort .select-dir-btn:not(.active) {
@@ -809,10 +816,6 @@ a:active:not(.active) {
   padding: 30px 73px;
   border-bottom: 1px solid grey;
 }
-
-/* .room-card > * {
-  outline: 1px dashed green;
-} */
 
 .room-card .room-photo {
   margin-right: 30px;
@@ -866,12 +869,10 @@ a:active:not(.active) {
 
 .btn-room-result:last-child {
   width: 142px;
-  /* background-color: var(--theme-color-3); */
 }
 
 .rating {
   margin-left: auto;
-  /* min-width:160px; */
 
   display: flex;
   flex-direction: column;
@@ -880,19 +881,16 @@ a:active:not(.active) {
 }
 
 .rating .stars-amount {
-  /* width: 160px; */
   height: 18px;
 
   display: flex;
   flex-direction: row-reverse;
-  
-  /* background-color: lightsalmon; */
 }
 
 .rating .star {
-  background: url(../img/five-star.svg) 50% 50% no-repeat;
   width: 18px;
   height: 18px;
+  background: url(../img/five-star.svg) 50% 50% no-repeat;
 }
 
 .rating .star:not(:last-child) {
@@ -924,39 +922,35 @@ a:active:not(.active) {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  /* outline: 1px dashed red; */
 }
 
 /* Подвал на главной
 со сдвигом на карту */
 .index-footer {
-  /* Съезд на карту
+  /* Отобразить поверх карты */
+  position: relative;
+
+  /* Наложение на карту
   на всю величину */
   margin-top: -120px;
 
   /* Едва прозрачный фон (opacity
-  делает прозрачными также потомков,
+  сделает прозрачными также потомков,
   потому используется альфа-канал) */
   background-color: rgba(255, 255, 255, 0.9);
-
-  /* Отобразить поверх карты */
-  position: relative;
 }
 
 .main-footer > * {
   width: 240px;
   height: 48px;
-
-  /* outline: 1px dashed red; */
 }
 
 .main-footer > .visit {
+  padding: 10px;
+
   font-size: 21px;
   font-weight: bold;
   line-height: 26px;
-
-  padding: 10px;
 }
 .main-footer > .visit a {
   margin-left: 55px;
@@ -965,22 +959,22 @@ a:active:not(.active) {
 .main-footer > .social {
   margin: 0;
   padding: 0;
-  list-style: none;
-  
+
   display: flex;
   justify-content: center;
+
+  list-style: none;
 }
 
 .main-footer > .social a {
+  width: 46px;
+  height: 48px;
+
   display: flex;
   align-items: center;
   justify-content: space-around;
 
-  width: 46px;
-  height: 48px;
-
   background-color: var(--theme-color-2);
-  
 }
 
 .main-footer > .social a {
@@ -1015,11 +1009,11 @@ a:active:not(.active) {
 }
 
 .main-footer > .dev-link a {
+  margin-right: 30px;
+  
   display: flex;
   flex-direction: row;
   align-items: center;
-
-  margin-right: 30px;
 }
 
 .main-footer > .dev-link a:active {
@@ -1046,13 +1040,15 @@ a:active:not(.active) {
 }
 
 
+/*---------------------------------*/
 /*---- Всплывашка поиска жилья ----*/
+/*---------------------------------*/
 
 .inn-search-pop-up form {
   position: absolute;
   top: 293px;
   left: calc(50% - 293px);
-  z-index: 1;
+  z-index: 100;
 
   width: 570px;
   margin: 0 auto;
@@ -1061,34 +1057,23 @@ a:active:not(.active) {
   display: flex;
   flex-direction: column;
 
-  background-color: var(--theme-color-1);
-
   line-height: 26px;
   font-weight: bold;
 
-  /* Временно */
-/*   outline: 1px dashed red;
-  margin-bottom: 150px;
-  margin-top: 10px; */
+  background-color: var(--theme-color-1);
 }
 
 .inn-search-pop-up .input-wrap {
+  margin-bottom: 30px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  margin-bottom: 30px;
-  
-  /* outline: 1px dashed blueviolet; */
 }
 
 .inn-search-pop-up .input-wrap:nth-child(3) {
   margin-bottom: 55px;
 }
-
-/* .inn-search-pop-up {
-  margin-right: 15px;
-} */
 
 .inn-search-pop-up .inner-wrap {
   width: 50%;
@@ -1103,10 +1088,11 @@ a:active:not(.active) {
 }
 
 .inn-search-pop-up input {
+  padding: 0 8px;
+
   font: inherit;
   text-transform: inherit;
   line-height: 38px;
-  padding: 0 8px;
   
   background-color: #f2f2f2;
   border: none;
@@ -1119,9 +1105,10 @@ a:active:not(.active) {
 
 .inn-search-pop-up input:focus,
 .inn-search-pop-up input.arrow-control {
+  outline: none;
+
   background-color: white;
   box-shadow: inset 0 0 0 2px #ebebeb;
-  outline: none;
 }
 
 .inn-search-pop-up input:not(.guest-amount) {
@@ -1146,18 +1133,17 @@ a:active:not(.active) {
 
 /* Кастомная иконка календаря для Chromium */
 input[type="date"]::-webkit-calendar-picker-indicator {
-  color: rgba(0, 0, 0, 0);
-  /* color: #a9a9a9; */
-  opacity: 1;
   display: block;
-  background: url(../img/calendar-icon.svg) 50% 50% no-repeat;
   width: 20px;
   height: 20px;
-  border-width: thin;
+
+  opacity: 1;
+  color: rgba(0, 0, 0, 0);
+  background: url(../img/calendar-icon.svg) 50% 50% no-repeat;
 }
 input[type="date"]::-webkit-calendar-picker-indicator:hover {
-  background-image: url(../img/calendar-icon-hover.svg);
   cursor: pointer;
+  background-image: url(../img/calendar-icon-hover.svg);
 }
 input[type="date"]::-webkit-calendar-picker-indicator:active {
   background-image: url(../img/calendar-icon-active.svg);
@@ -1183,9 +1169,10 @@ input[type="date"]::-webkit-inner-spin-button {
   position: absolute;
   left: 0;
   top: 0;
+
   width: 38px;
   height: 38px;
-  /* background-color: lightcyan; */
+
   cursor: pointer;
 }
 
@@ -1193,38 +1180,48 @@ input[type="date"]::-webkit-inner-spin-button {
   position: absolute;
   right: 0;
   top: 0;
+
   width: 38px;
   height: 38px;
-  /* background-color: lightcyan; */
+
   cursor: pointer;
 }
 
 .inn-search-pop-up .arrow-left::before {
   content: "";
+
   position: absolute;
   left: 14px;
   top: 18px;
+
   width: 11px;
   height: 3px;
+
   background-color: #a9a9a9;
 }
 
 .inn-search-pop-up .arrow-right::before {
   content: "";
+
   position: absolute;
   right: 14px;
   top: 18px;
+
   width: 11px;
   height: 3px;
+
   background-color: #a9a9a9;
 }
 .inn-search-pop-up .arrow-right::after {
   content: "";
+
   position: absolute;
   right: 18px;
   top: 14px;
+
   width: 3px;
   height: 11px;
+
   background-color: #a9a9a9;
 }
 .inn-search-pop-up .arrow-left:hover::before, .inn-search-pop-up .arrow-right:hover::before {
@@ -1238,4 +1235,65 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 .inn-search-pop-up .arrow-right:active::after {
   background-color: var(--theme-color-2);
+}
+
+
+/* Анимация формы и наложение слоев */
+
+@keyframes to-slide-up {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-403px); }
+}
+@keyframes to-slide-down {
+  0% { transform: translateY(-403px); }
+  100% { transform: translateY(0px); }
+}
+/* Задвинуть форму (перед отключением) */
+.inn-search-pop-up {
+  animation-name: to-slide-up;
+  animation-duration: .6s;
+  animation-fill-mode: both;
+}
+/* Выдвинуть форму */
+.inn-search-pop-up.show {
+  animation-name: to-slide-down;
+  animation-duration: .6s;
+}
+/* Подложка в блоке поиска гостиниц
+   для перекрытия задвигающейся формы */
+.inn-search .background-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  height: 294px;
+  background-color: var(--theme-color-1);
+}
+/* Отобразить элементы поверх подложки */
+.inn-search .title {
+  position: relative;
+  z-index: 2;
+}
+.inn-search .offer {
+  position: relative;
+  z-index: 2;
+}
+.inn-search .btn-search {
+  z-index: 2;
+}
+/* Контекст наложения
+   крупных блоков */
+.features-and-services {
+  position: relative;
+  z-index: 3;
+}
+.inn-search {
+  position: relative;
+  z-index: 2;
+}
+.map {
+  position: relative;
 }
