@@ -71,6 +71,9 @@ body {
   font-size: 14px;
   line-height: 21px;
   text-transform: uppercase;
+
+  /* всегда отображать скроллбар */
+  overflow-y: scroll;
 }
 
 a {
@@ -211,6 +214,7 @@ a:active:not(.active) {
 }
 
 .main-navigation img {
+  margin: 0 auto;
   display: unset;
 }
 
@@ -651,13 +655,13 @@ a:active:not(.active) {
 .thumb-2 {
   position: absolute;
   top: -9px;
-  z-index: 2;
+  z-index: 1;
 
   height: 20px;
   width: 20px;
 
   border-radius: 10px;
-  background-color: white;
+  background-color: var(--theme-color-1);
 }
 
 .thumb-1 {
@@ -672,14 +676,30 @@ a:active:not(.active) {
   cursor: pointer;
 }
 
-.thumb-1::before,
-.thumb-2::before {
+.thumb-1:hover::before,
+.thumb-2:hover::before {
+  content: "";
+
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  z-index: 3;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 11px;
+  background-color: var(--theme-color-1);
+}
+
+.thumb-1::after,
+.thumb-2::after {
   content: "";
 
   position: absolute;
   top: 8px;
   left: 8px;
-  z-index: 10;
+  z-index: 4;
 
   width: 4px;
   height: 4px;
@@ -1154,7 +1174,21 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 
 
-/* Кастомные номерные инпуты */
+/* Кастомизация инпутов даты */
+
+.inn-search-pop-up input[type="date"] {
+  
+}
+
+
+
+
+
+
+
+
+
+/* Кастомизация числовых инпутов */
 
 /* Убрать встроенные стрелки-кнопки */
 .inn-search-pop-up input.delete-default-arrows::-webkit-inner-spin-button {

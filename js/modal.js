@@ -1,6 +1,7 @@
 'use string'
+// Скрипт работает с модальным окном поиска гостиницы на главной странице
 
-/*------- Вставить модалку на место -------*/
+/*------- Вставить модальное окно на место -------*/
 
 let popup = document.querySelector('.inn-search-pop-up');
 let innSearch = document.querySelector('.inn-search');
@@ -19,8 +20,6 @@ function toggleDisplayElem(evt) {
 
     // отобразить форму
     popup.hidden = false;
-    // фокус на первое поле формы
-    popup.querySelector('input').focus();
     // css-анимация появления
     popup.classList.add('show');
 
@@ -40,7 +39,28 @@ function toggleDisplayElem(evt) {
 showFormBtn.addEventListener('click', toggleDisplayElem);
 
 
-/*------- Кастомизация и поведение инпутов в модалке -------*/
+/*------- Автозаполнение дат -------*/
+
+let dateInputs = document.querySelectorAll('.inn-search-pop-up input[type="date"]');
+
+for (let input of dateInputs) {
+  
+  // автозаполнение дат
+  let date = new Date();
+  input.classList.contains('arrival-date') ?
+    date.setDate(date.getDate() + 7) : date.setDate(date.getDate() + 14);
+  
+  // Формат даты в инпуте yyyy-mm-dd с нулями перед единичными числами, например: 2019-09-02
+  let d = `${date.getDate()}`; if(d.length !== 2) d = 0 + d;
+  let m = `${date.getMonth()}`; if(m.length !== 2) m = 0 + m;
+  let y = `${date.getFullYear()}`;
+  
+  // вписать в инпут
+  input.value = `${y}-${m}-${d}`;
+}
+
+
+/*------- Кастомизация и поведение числовых инпутов -------*/
 
 let numInputsWrap = document.querySelectorAll('.inn-search-pop-up .cust-wrap');
 
@@ -115,3 +135,5 @@ for (let wrap of numInputsWrap) {
   });
 
 }
+
+
