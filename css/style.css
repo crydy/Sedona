@@ -1168,32 +1168,20 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 input[type="date"]::-webkit-calendar-picker-indicator:active {
   background-image: url(../img/calendar-icon-active.svg);
 }
-/* Убрать внутренние маленькие стрелки */
+/* Убрать внутренние стрелки */
 input[type="date"]::-webkit-inner-spin-button {
   display: none;
 }
 
-
-/* Кастомизация инпутов даты */
-
-.inn-search-pop-up input[type="date"] {
-  
+/* Убрать встроенные стрелки-кнопки в числовых инпутах */
+.inn-search-pop-up input[type=number] {
+  -moz-appearance: textfield;
 }
-
-
-
-
-
-
-
-
-
-/* Кастомизация числовых инпутов */
-
-/* Убрать встроенные стрелки-кнопки */
-.inn-search-pop-up input.delete-default-arrows::-webkit-inner-spin-button {
-  display: none;
-}
+.inn-search-pop-up input[type=number]::-webkit-inner-spin-button,
+.inn-search-pop-up input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}  
 
 .inn-search-pop-up .new-arrows {
   position: relative;
